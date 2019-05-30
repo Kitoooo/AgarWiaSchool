@@ -1,6 +1,7 @@
 
 var Player;
 var blobs = [];
+var i = 0;
     // var height = window.screen.availHeight;
     // var width = window.screen.availWidth;
 function setup(){
@@ -9,21 +10,35 @@ function setup(){
     var cnv = createCanvas(windowWidth, windowHeight);
     cnv.style('display', 'block');
     background(0);
-    player = new Player(width/2,height/2,64);
-    for(var i=0;i<10;i++){
-        blobs[i] = new blob(random(width), random(height), 16)
+    player = new Player(64);
+    
+    for(i=0;i<50;i++){
+        blobs[i] = new blob(random(-width,width*2),random(-height,height*2),16);
     }
 }
-    
+//setInterval(makeBlob(),100);  
 function draw(){
     //funkcja z frameworka p5 wywolywana caly czas
-    player.show();
+    background(0);
+    translate(width/2-player.pos.x,height/2-player.pos.y);
+    
+    
+    
+    //translate(-width+player.pos.x,-height+player.pos.y);
     for (var i =0; i<blobs.length;i++){
         blobs[i].show();
+        //if(blob.)
     }
     
+    player.show();
+    player.update();
     
 }
+// function makeBlob(){
+//     i+=1;
+//     blobs[i] = new blob(random(-width,width*2),random(-height,height*2),16);
+//     console.log(i);
+// }
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     background(0);
