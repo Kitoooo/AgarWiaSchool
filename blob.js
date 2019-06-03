@@ -6,7 +6,4 @@ function blob(x,y,r){
         fill(255);
         ellipse(this.pos.x, this.pos.y, this.r, this.r);
     }
-    this.eated = function(){
-        
-    }
 }

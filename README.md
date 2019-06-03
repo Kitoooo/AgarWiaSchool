@@ -15,3 +15,6 @@
 <h3>03.06.2019</h3>
 <hr>
 <p>Added player collision</p>
+<p>Added board boundary</p>
+<p>Player now grows and shrinks</p>
+<p>Some code refreactoring and commenting</p>
