@@ -5,5 +5,6 @@ function blob(x,y,r){
     this.show = function() {
         fill(255);
         ellipse(this.pos.x, this.pos.y, this.r, this.r);
+        stroke(255);
     }
 }
