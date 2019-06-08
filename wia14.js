@@ -1,6 +1,7 @@
 var blobs = [];
 var DEFAULT_PLAYER_SIZE = 64;
 var modifier = 1;
+var Enemymodifier = 1;
 var started_flag = 0;
 var button = null;
 var GAME_WIDTH = 10000;
@@ -16,6 +17,7 @@ function setup(){
     var cnv = createCanvas(0, 0);
     cnv.style('display', 'block');
     button = createButton("START");
+    //button.style('text-allign','center');
     button.mousePressed(startGame);
     noLoop();
 }
@@ -26,6 +28,7 @@ function startGame(){
     background(0);
     stroke(255);
     player = new Player(DEFAULT_PLAYER_SIZE);
+    enemy = new Enemy(DEFAULT_PLAYER_SIZE);
     
     for(i=0;i<200;i++){
         var x = random(-GAME_WIDTH,GAME_WIDTH);
@@ -34,10 +37,7 @@ function startGame(){
     }
     loop();
     started_flag = 1;
-    var loginscreen = document.querySelector("#loginscreen");
     button.remove();
-    loginscreen.remove();
-
 }
 function draw(){
     //p5 function which is basicaly just a loop
@@ -66,15 +66,20 @@ function draw(){
         modifier = 1;
     }
 
+
+    if(enemy.eats(player)){
+        button = createButton("RESTART");
+        button.mousePressed(startGame);
+        noLoop();
+    }
     player.r+=(0.4*modifier);
+    enemy.r+=(0.5*Enemymodifier);
     //player grows
+    enemy.update();
+    enemy.show();
     player.update();
     player.show();
-}
-    
-}
-function remove(d){
-    d.remove();
+    }
 }
 function windowResized() {
     if (started_flag == 1){

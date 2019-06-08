@@ -1,5 +1,5 @@
 function Player(r) {
-    this.pos = createVector(0, 0);
+    this.pos = createVector(0,0);
     this.r = r;
 
     this.update = function(){
@@ -35,10 +35,6 @@ function Player(r) {
     this.show = function () {
         fill(255);
         ellipse(this.pos.x, this.pos.y, this.r,this.r);
-        stroke(255);
-        //console.log("x: "+this.pos.x);
-        //console.log("y: "+this.pos.y);
-        //line(this.pos.x,this.pos.y,this.pos.x+this.r/2,this.pos.y);
     }
     this.eats = function(other){
         var d = p5.Vector.dist(this.pos, other.pos);
