@@ -1,6 +1,6 @@
 # AgarWiaSchool
 <h2>Opis  gry</h2>
-<p> Gra polega na tym zeby przezyc jak najdłużej. Gra się kończy gdy przeciwnik cię dotknie. Przeciwnik porusza się ze stałą prędkością i cały czas rośnie.
+<p> Gra polega na przeżyciu jak najdłużej ilości czasu. Gra kończy się gdy przeciwnik cię dotknie. Przeciwnik porusza się ze stałą prędkością i cały czas rośnie.
 Twoja prędkość maleje wraz ze powiększaniem się, ale możesz się zmniejszyć zbierając kuleczki.</p>
 <h3> 16.05.2019 </h3>
 <hr>
